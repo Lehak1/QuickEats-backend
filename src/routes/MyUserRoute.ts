@@ -10,6 +10,6 @@ router.get("/",jwtCheck,jwtParse,MyUserController.getCurrentUser);
 
 
 
-router.post("/",jwtCheck,MyUserController.createCurrentUser);   //login
+
 router.put("/",jwtCheck ,jwtParse,validateMyUserRequest,MyUserController.updateCurrentUser)
 export default router;
