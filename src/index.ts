@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import MyUserRoute from "./routes/MyUserRoute"
 import {v2 as cloudinary }  from "cloudinary";
 import MyRestaurantRoutes from "./routes/MyRestaurantRoutes"
-
+import RestaurantRoute from "./routes/RestaurantRoute"
 
 
 
@@ -35,6 +35,7 @@ app.use(cors());
 
 app.use("/api/my/user",MyUserRoute);
 app.use("/restaurant",MyRestaurantRoutes);
+app.use("/api/getrestaurants",RestaurantRoute)
 
 app.listen(4000,()=>{
     console.log("listening");
