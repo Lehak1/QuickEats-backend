@@ -58,6 +58,23 @@ res.status(500).json({ message: "Something went wrong" });
 }
 }; 
  
+
+const getRestaurant=async(req:Request,res:Response)=>{
+try{
+const id =req.params.restaurantId;
+const restaurant=await Restaurant.findById(id);
+if(!restaurant){
+  return res.status(404).json({ message: "restaurant not found" });
+}
+res.json(restaurant);
+}
+catch(e){
+  res.status(500).json({msg:"something went wrong"})
+}
+};
+
+
 export default {
-    searchRestaurant
+    searchRestaurant,
+    getRestaurant
 }
